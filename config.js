@@ -14,6 +14,8 @@
 // along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 'use strict';
 
+// MongoDB is deployed and available as srv-captain--mongo-db:27017 to other apps. For example with NodeJS: mongoose.connect('mongodb://srv-captain--mongo-db/mydatabase?authSource=admin', {userMongoClient: true});
+
 const fs = require('fs');
 const environment = (process.env.NODE_ENV || 'development');
 const jsonPath = `./config/${environment}.json`;
@@ -30,7 +32,7 @@ if (fs.existsSync(jsonPath)) {
 		readonly: env('READONLY', 'false') === 'true',
 
 		webservice: env('WEBSERVICE_URL', {
-			database: env('WEBSERVICE_DATABASE', 'mongodb://localhost/pa11y-webservice'),
+			database: env('WEBSERVICE_DATABASE', 'mongodb://srv-captain--mongo-db/mydatabase'),
 			host: env('WEBSERVICE_HOST', '0.0.0.0'),
 			port: Number(env('WEBSERVICE_PORT', '3000')),
 			cron: env('WEBSERVICE_CRON', false)
