@@ -38,8 +38,13 @@ RUN apt-get update && apt-get install -y \
   lsb-release \
   wget \
   xdg-utils \
-  nodejs \
-  npm
+  curl
+
+RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+RUN source ~/.bashrc
+RUN nvm install 14.17.3
+RUN nvm use 14.17.3
+RUn nvm alias default 14.17.3
 
 COPY . ./
 
