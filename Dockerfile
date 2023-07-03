@@ -37,7 +37,9 @@ RUN apt-get update && apt-get install -y \
   libxtst6 \
   lsb-release \
   wget \
-  xdg-utils
+  xdg-utils \
+  nodejs \
+  npm
 
 COPY . ./
 
