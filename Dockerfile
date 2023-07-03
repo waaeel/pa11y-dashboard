@@ -1,7 +1,7 @@
 FROM node:15.7.0-stretch-slim
 
 # Install required dependencies
-RUN apt-get update -y && apt-get install \
+RUN apt-get update -y && apt-get upgrade -y && apt-get install \
   ca-certificates \
   fonts-liberation \
   libasound2 \
