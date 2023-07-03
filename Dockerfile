@@ -1,7 +1,7 @@
 FROM node:15.7.0-stretch-slim
 
 # Install required dependencies
-RUN apt-get install -y \
+RUN apt-get update -y && apt-get install \
   ca-certificates \
   fonts-liberation \
   libasound2 \
@@ -37,7 +37,7 @@ RUN apt-get install -y \
   libxtst6 \
   lsb-release \
   wget \
-  xdg-utils
+  xdg-utils -y
 
 COPY . ./
 
