@@ -17,7 +17,7 @@
 // MongoDB is deployed and available as srv-captain--mongo-db:27017 to other apps. For example with NodeJS: mongoose.connect('mongodb://srv-captain--mongo-db/mydatabase?authSource=admin', {userMongoClient: true});
 
 const fs = require('fs');
-const environment = (process.env.NODE_ENV || 'development');
+const environment = (process.env.NODE_ENV || 'production');
 const jsonPath = `./config/${environment}.json`;
 const jsPath = `./config/${environment}.js`;
 
